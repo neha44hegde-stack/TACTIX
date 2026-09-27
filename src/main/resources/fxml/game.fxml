@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.neha.tactix.controller.GameController"
+            prefWidth="600" prefHeight="760" styleClass="screen">
+    <top>
+        <VBox spacing="8" alignment="CENTER">
+            <padding><Insets top="16" right="16" bottom="8" left="16"/></padding>
+            <HBox spacing="20" alignment="CENTER">
+                <Label fx:id="xScoreLabel"    text="X Wins: 0" styleClass="score"/>
+                <Label fx:id="oScoreLabel"    text="O Wins: 0" styleClass="score"/>
+                <Label fx:id="drawScoreLabel" text="Draws: 0"  styleClass="score"/>
+            </HBox>
+            <Label fx:id="turnLabel"  text="Turn: X" styleClass="subtitle-small"/>
+            <Label fx:id="timerLabel" text="00:00"   styleClass="timer"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="16" alignment="CENTER">
+            <padding><Insets top="8" right="24" bottom="8" left="24"/></padding>
+            <GridPane fx:id="boardGrid" hgap="8" vgap="8" alignment="CENTER"
+                      minWidth="380" minHeight="380"/>
+            <HBox spacing="12" alignment="CENTER">
+                <Button fx:id="undoButton"    text="Undo"        onAction="#onUndo"/>
+                <Button fx:id="restartButton" text="Restart"     onAction="#onRestart"/>
+                <Button fx:id="homeButton"    text="Home"        onAction="#onHome"/>
+                <Button                       text="Reset Score" onAction="#onResetScore"/>
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <VBox spacing="6">
+            <padding><Insets top="8" right="24" bottom="16" left="24"/></padding>
+            <Label text="Move History" styleClass="subtitle-small"/>
+            <ListView fx:id="historyList" prefHeight="120"/>
+        </VBox>
+    </bottom>
+</BorderPane>

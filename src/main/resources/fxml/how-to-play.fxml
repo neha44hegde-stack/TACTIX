@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.neha.tactix.controller.HowToPlayController"
+      alignment="CENTER" spacing="14" prefWidth="560" prefHeight="700" styleClass="screen">
+    <padding><Insets top="32" right="32" bottom="32" left="32"/></padding>
+    <Label text="How to Play" styleClass="title-small"/>
+    <Label wrapText="true" maxWidth="480" styleClass="body" text="Objective: Be the first to place three of your marks in a row — horizontally, vertically, or diagonally."/>
+    <Label wrapText="true" maxWidth="480" styleClass="body" text="Turn order: X always moves first. Players alternate turns."/>
+    <Label wrapText="true" maxWidth="480" styleClass="body" text="Winning combinations: any full row, full column, or either main diagonal."/>
+    <Label wrapText="true" maxWidth="480" styleClass="body" text="Draw: if all nine squares are filled and nobody has three in a row, the game is a draw."/>
+    <Label wrapText="true" maxWidth="480" styleClass="body" text="AI difficulty: Easy = random, Medium = heuristics, Hard = optimal (Minimax + Alpha-Beta)."/>
+    <Button text="Back" onAction="#onBack" styleClass="primary-button"/>
+</VBox>

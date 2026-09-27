@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.neha.tactix.controller.ModeController"
+      alignment="CENTER" spacing="20" prefWidth="560" prefHeight="700" styleClass="screen">
+    <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+    <Label text="Select Game Mode" styleClass="title-small"/>
+    <VBox spacing="10" alignment="CENTER">
+        <RadioButton fx:id="hvhRadio" text="Human vs Human"/>
+        <RadioButton fx:id="hvcRadio" text="Human vs Computer"/>
+    </VBox>
+    <Label text="Difficulty" styleClass="subtitle-small"/>
+    <VBox spacing="10" alignment="CENTER">
+        <RadioButton fx:id="easyRadio"   text="Easy"/>
+        <RadioButton fx:id="mediumRadio" text="Medium"/>
+        <RadioButton fx:id="hardRadio"   text="Hard"/>
+    </VBox>
+    <HBox spacing="12" alignment="CENTER">
+        <Button text="Back" onAction="#onBack"/>
+        <Button text="Start Game" onAction="#onStart" styleClass="primary-button"/>
+    </HBox>
+</VBox>

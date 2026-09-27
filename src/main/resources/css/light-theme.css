@@ -1,0 +1,30 @@
+.root { -fx-background-color: #f1f5f9; -fx-font-family: "Segoe UI", "Helvetica Neue", sans-serif; }
+.screen { -fx-background-color: #f1f5f9; }
+.title       { -fx-text-fill: #0f172a; -fx-font-size: 48px; -fx-font-weight: bold; }
+.title-small { -fx-text-fill: #0f172a; -fx-font-size: 28px; -fx-font-weight: bold; }
+.subtitle       { -fx-text-fill: #475569; -fx-font-size: 16px; }
+.subtitle-small { -fx-text-fill: #334155; -fx-font-size: 15px; }
+.body           { -fx-text-fill: #1e293b; -fx-font-size: 14px; }
+.score          { -fx-text-fill: #0f172a; -fx-font-size: 14px; -fx-font-weight: bold; }
+.timer          { -fx-text-fill: #0284c7; -fx-font-size: 18px; -fx-font-weight: bold; }
+.button {
+    -fx-background-color: #e2e8f0; -fx-text-fill: #0f172a; -fx-font-size: 14px;
+    -fx-padding: 10 18 10 18; -fx-background-radius: 10; -fx-cursor: hand;
+}
+.button:hover { -fx-background-color: #cbd5e1; }
+.primary-button       { -fx-background-color: #0284c7; -fx-text-fill: #ffffff; -fx-font-weight: bold; }
+.primary-button:hover { -fx-background-color: #0369a1; }
+.cell {
+    -fx-background-color: #ffffff; -fx-background-radius: 12;
+    -fx-font-size: 56px; -fx-font-weight: bold;
+    -fx-min-width: 110; -fx-min-height: 110; -fx-text-fill: #0f172a;
+}
+.cell:hover { -fx-background-color: #e2e8f0; }
+.cell-x     { -fx-text-fill: #0284c7; }
+.cell-o     { -fx-text-fill: #dc2626; }
+.winning-cell {
+    -fx-background-color: #fde68a; -fx-border-color: #f59e0b;
+    -fx-border-width: 3; -fx-border-radius: 12;
+}
+.list-view { -fx-background-color: #ffffff; -fx-control-inner-background: #ffffff; -fx-text-fill: #0f172a; }
+.radio-button, .check-box { -fx-text-fill: #0f172a; }
