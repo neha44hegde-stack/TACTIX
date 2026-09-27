@@ -1,0 +1,54 @@
+name: Deploy Web Emulator
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21 JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Compile and Package JAR Artifact
+        run: mvn clean package
+
+      - name: Construct HTML Web Wrapper Layout
+        run: |
+          mkdir -p web-dist
+          cp target/tactix-1.0.0.jar web-dist/
+          cat << 'EOF' > web-dist/index.html
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>TACTIX - Intelligent AI Game</title>
+              <script src="https://cheerpj.com"></script>
+              <style>
+                  body { margin: 0; background: #121212; display: flex; justify-content: center; align-items: center; height: 100vh; color: #fff; font-family: sans-serif; }
+                  #container { width: 1024px; height: 768px; border: 2px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border-radius: 8px; overflow: hidden; }
+              </style>
+          </head>
+          <body>
+              <div id="container"></div>
+              <script>
+                  cheerpjInit({enableWebBytecodeCache:true});
+                  cheerpjCreateDisplay(1024, 768, document.getElementById("container"));
+                  cheerpjRunJar("/app/tactix-1.0.0.jar");
+              </script>
+          </body>
+          </html>
+          EOF
+
+      - name: Deploy Live Emulator via GitHub Pages Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: web-dist
+          branch: gh-pages
